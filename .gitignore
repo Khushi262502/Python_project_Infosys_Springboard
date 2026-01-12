@@ -10,3 +10,4 @@ __pycache__/
 
 # VS Code settings (optional)
 .vscode/
+confg/email_config.py
