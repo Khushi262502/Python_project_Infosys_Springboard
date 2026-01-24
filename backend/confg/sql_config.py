@@ -7,8 +7,8 @@ def database_connection():
         connection=mysql.connector.connect(
             host="localhost",
             user='root',
-            password="",
-            database_name="",
+            password="root",
+            database_name="log_analytics_db",
             port=""
         )
         

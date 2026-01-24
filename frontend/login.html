@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #f4f6f9;
+    }
+    .card {
+      width: 360px; background: #fff; padding: 22px;
+      border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    h2 { text-align: center; margin-bottom: 16px; }
+    label { display: block; margin: 10px 0 6px; font-size: 14px; }
+    input {
+      width: 100%; padding: 10px; border: 1px solid #cfd6dd;
+      border-radius: 8px; outline: none;
+    }
+    input:focus { border-color: #4a7dff; }
+    button {
+      width: 100%; margin-top: 14px; padding: 10px;
+      border: none; border-radius: 8px; background: #4a7dff; color: #fff;
+      cursor: pointer; font-weight: 600;
+    }
+    button:hover { opacity: 0.95; }
+    .msg { margin-top: 10px; text-align: center; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Enter name" required />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Enter email" required />
+
+      <label for="username">Username</label>
+      <input id="username" type="text" placeholder="Enter username" required />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter password" required />
+
+      <button type="submit">Login</button>
+      <p class="msg" id="msg"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Basic demo validation (front-end only)
+      if (password.length < 6) {
+        msg.textContent = "Password must be at least 6 characters.";
+        msg.style.color = "red";
+        return;
+      }
+
+      msg.textContent = `Welcome, ${name}! (Demo login)`;
+      msg.style.color = "green";
+
+      // Clear form (optional)
+      // form.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,9 +1,14 @@
-from confg.dask_config import start_dask
-from processing.dask_pipeline import build_pipeline
-from confg.email_config import send_email
-from anomaly.detector import detect_anomaly 
+from backend.confg.dask_config import start_dask
+from backend.processing.dask_pipeline import build_pipeline
+from backend.confg.email_config import send_email
+from backend.anomaly.detector import detect_anomaly 
+from fastapi import FastAPI
+from backend.router.service import router
 import time
 import os
+
+app = FastAPI()
+app.include_router(router)
 
 ADMIN_EMAIL = "khushijuly2004@gmail.com"
 def main():
