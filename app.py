@@ -5,8 +5,8 @@
 # It reads the processed and deploy in visually(dashboard)
 
 import streamlit as st
-from backend.processing.pipeline import build_pipeline
-from backend.anomaly.detector import detect_anomalies
+from backend.processing.dask_pipeline import build_pipeline
+from backend.anomaly.detector import detect_anomaly
 import plotly.express as px
 
 

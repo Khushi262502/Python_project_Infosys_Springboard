@@ -6,10 +6,10 @@ def database_connection():
     try:
         connection=mysql.connector.connect(
             host="localhost",
-            user='root',
+            user="root",
             password="root",
-            database_name="log_analytics_db",
-            port=""
+            database="log_analytics_db",
+            port="3306"
         )
         
         if connection.is_connected():
